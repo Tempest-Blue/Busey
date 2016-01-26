@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#ffffff"
+        android:id="@+id/routesSpinnerContainer">
+
+        <com.betterspinner.BetterSpinner
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/routesSpinner"
+            android:hint="Select a Bus Route"
+            android:textColorHint="#000000"
+            android:gravity="center_horizontal"
+            android:layout_centerHorizontal="true"
+            android:textColor="#000000"
+            android:layout_alignParentBottom="false"
+            android:layout_alignParentTop="false" />
+    </FrameLayout>
+
+    <fragment
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:name="com.busapp._Utilities.CustomMapFragment"
+        android:id="@+id/map"
+        android:layout_below="@+id/routesSpinnerContainer" />
+
+    <at.markushi.ui.CircleButton
+        android:layout_width="64dip"
+        android:layout_height="64dip"
+        app:cb_color="@color/colorPrimaryDark"
+        app:cb_pressedRingWidth="8dip"
+        android:id="@+id/resetMapPosition"
+        android:layout_marginRight="15dp"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="15dp" />
+
+    <at.markushi.ui.CircleButton
+        android:layout_width="64dip"
+        android:layout_height="64dip"
+        app:cb_color="@color/colorPrimaryDark"
+        app:cb_pressedRingWidth="8dip"
+        android:id="@+id/findUserLocation"
+        android:layout_marginRight="15dp"
+        android:layout_alignParentRight="false"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="15dp"
+        android:layout_toLeftOf="@+id/resetMapPosition" />
+
+</RelativeLayout>
